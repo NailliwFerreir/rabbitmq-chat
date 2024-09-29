@@ -12,9 +12,11 @@ type MessagesStore = {
   appendMessage: (message: Message) => void;
   initializeSocket: () => void;
 };
-
+export const frontendUrl = 'https://57sb6m12-3000.brs.devtunnels.ms'
+export const baseUrl = 'https://57sb6m12-3001.brs.devtunnels.ms'
+// export const baseUrl = 'http://localhost:3001'; // this backend server is running on localhost
 export const useMessageStore = create<MessagesStore>((set) => {
-  const socket = io('https://57sb6m12-3001.brs.devtunnels.ms', {
+  const socket = io( baseUrl, {
     autoConnect: false,
   });
 
@@ -33,11 +35,11 @@ export const useMessageStore = create<MessagesStore>((set) => {
       console.log('Sending message', message);
       try {
         socket.emit('chat message', JSON.stringify(message));
-        toast({
-          duration: 500,
-          title: 'Message sent',
-          description: 'Your message was sent successfully',
-        })
+        // toast({
+        //   duration: 500,
+        //   title: 'Message sent',
+        //   description: 'Your message was sent successfully',
+        // })
       } catch (error) {
         console.error('Error sending message', error);
         toast({

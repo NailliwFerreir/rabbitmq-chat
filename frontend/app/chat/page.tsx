@@ -1,4 +1,5 @@
 'use client'
+
 import rabbitmqIcon from '@/app/assets/images/rabbitmq-icon.png';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -54,9 +55,9 @@ export default function ChatPage() {
   }, [messages]);
 
   return (
-    <>
-      <div className="w-full h-16 flex items-center justify-center dark:bg-black bg-white dark:text-white text-black">
-        <Link href={'/'} className="w-full flex flex-row justify-start items-center gap-2 animate-blink ml-4 ">
+    <div className='flex-1 dark:bg-black bg-white max-h-dvh min-h-dvh w-full h-full'>
+      <div className="w-full h-16 flex items-center justify-between dark:bg-black bg-white dark:text-white text-black">
+        <Link href={'/'} className="flex flex-row justify-start items-center gap-2 animate-blink ml-4 ">
         <Image
           className="dark:invert select-none user-select-none pointer-events-none w-4 h-4"
           src={rabbitmqIcon}
@@ -64,6 +65,7 @@ export default function ChatPage() {
           priority
         />
         </Link>
+        <Link href={'/qrcode'} className="text-sm font-bold mr-4">Add new Rabbit</Link>
       </div>
       <div className="flex-1  max-h-[calc(100dvh-128px)] min-h-[calc(100dvh-128px)] overflow-y-auto overflow-hidden no-scrollbar dark:bg-black bg-white">
         <ScrollArea>
@@ -96,6 +98,6 @@ export default function ChatPage() {
           </Button>
         </div>
       </form>
-    </>
+    </div>
   );
 }
