@@ -12,9 +12,10 @@ type MessagesStore = {
   appendMessage: (message: Message) => void;
   initializeSocket: () => void;
 };
-export const frontendUrl = 'https://57sb6m12-3000.brs.devtunnels.ms'
-export const baseUrl = 'https://57sb6m12-3001.brs.devtunnels.ms'
-// export const baseUrl = 'http://localhost:3001'; // this backend server is running on localhost
+export const frontendUrl = 'http://localhost:3000'
+// export const frontendUrl = 'https://57sb6m12-3000.brs.devtunnels.ms'
+// export const baseUrl = 'https://57sb6m12-3001.brs.devtunnels.ms'
+export const baseUrl = 'http://localhost:3001';
 export const useMessageStore = create<MessagesStore>((set) => {
   const socket = io( baseUrl, {
     autoConnect: false,
