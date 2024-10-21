@@ -27,7 +27,7 @@ export default function Qrcode() {
         />
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <p className="text-sm select-none text-muted-foreground text-pretty italic">By Will 🚀.</p>
+{/*         <p className="text-sm select-none text-muted-foreground text-pretty italic">By Quina 🚀.</p> */}
       </footer>
     </div>
   );
